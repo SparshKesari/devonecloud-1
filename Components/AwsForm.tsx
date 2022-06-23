@@ -369,7 +369,7 @@ export function classNames(...classes) {
 // }
 
 export const AWSForm = ({handledesc}: any) => {
-    const [selectedRegion, setSelectedRegion] = useState(regions[0])
+  const [selectedRegion, setSelectedRegion] = useState(regions[0])
   const [kweryRegion, setKweryRegion] = useState('')
   
   const [selectedService, setSelectedService] = useState(services[0])
@@ -388,7 +388,7 @@ export const AWSForm = ({handledesc}: any) => {
     aws_instance: [
       {
         id: 1,
-        title: "Is tech making coffee better or worse?",
+        title: "AWS INST",
         date: "Jan 7",
         commentCount: 29,
         shareCount: 16,
@@ -435,8 +435,25 @@ export const AWSForm = ({handledesc}: any) => {
     ],
   });
 
+  // let [awsServices] = useState({
+  //   aws_instance: {
+  //     inputBoxes: [{label: 'Region', Component: <MyCombobox /> },{}],
+  //     comboBoxes: [],
+  //     choices: [],
+  //   },
+  //   aws_s3: {
+  //     inputBoxes: [],
+  //     comboBoxes: [],
+  //     choices: [],
+  //   },
+  //   aws_alb: {
+  //     inputBoxes: [],
+  //     comboBoxes: [],
+  //     choices: [],
+  //   },
+  // });
+
     return(
-        
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
           {serviceProviders.map((service, idx) => (
@@ -497,7 +514,7 @@ export const AWSForm = ({handledesc}: any) => {
                   >
                     Cores count
                   </label>
-                  <MyCombobox  handledesc={handledesc}name={cores[0].name} kwery={kweryCores} setKwery ={setKweryCores} options={cores} selectedOption={selectedCores} setSelectedOption={setSelectedCores}/>
+                  <MyCombobox  handledesc={console.log} name={cores[0].name} kwery={kweryCores} setKwery ={setKweryCores} options={cores} selectedOption={selectedCores} setSelectedOption={setSelectedCores}/>
                 </div>
                 
 
@@ -543,21 +560,21 @@ export const AWSForm = ({handledesc}: any) => {
                 </div>
                 <div className="mb-5">
                   <label
-                    htmlFor="email"
+                    htmlFor="text"
                     className="mb-3 block text-base font-medium text-[#07074D]"
                   >
                     Instance Tag
                   </label>
                   <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Instance tag"
+                    type="text"
+                    name="text"
+                    id="text"
+                    placeholder="Get Script on your email!"
                     className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                   />
                 </div>
                 <div>
-                  <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">
+                  <button className="hover:shadow-form rounded-md bg-indigo-500 hover:bg-teal-500 py-3 px-8 text-base font-semibold text-white outline-none">
                     Submit
                   </button>
                 </div>

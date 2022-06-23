@@ -31,14 +31,16 @@ export default function MyCombobox ({name, kwery, setKwery, options, selectedOpt
   kwery === ''
     ? options
     : options.filter((option) =>
-        option.name
+        option?.name
           .toLowerCase()
           .replace(/\s+/g, '')
-          .includes(kwery.toLowerCase().replace(/\s+/g, ''))
+          .includes(kwery?.toLowerCase().replace(/\s+/g, ''))
       )
       function handleChange(e: any){
+        console.log(`Changed: ${e.name}`)
+        setSelectedOption(e)
         handledesc(e)
-        setKwery(e.target.value)
+        setKwery(e.name)
       }
   return (
     // <Combobox value={selectedOption} onChange={setSelectedOption}>
@@ -52,16 +54,15 @@ export default function MyCombobox ({name, kwery, setKwery, options, selectedOpt
     //   </Combobox.Options>
     // </Combobox>
 
-    <div className="top-32 w-70">
-    <Combobox value={selectedOption} onChange={setSelectedOption}>
+    <div className="top-32 w-70 ">
+    <Combobox value={selectedOption} onChange={handleChange}>
       <div className="relative mt-1">
         <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
           <Combobox.Input
             name={name}
             className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
-            displayValue={(option)=>option.name}
-            onChange={(event) => handleChange(event)}
-            onClick={(event) => handleChange(event)}
+            displayValue={(option: optionsInterface)=>option.name}
+            onChange={(e)=>(setKwery(e.target.value))}
           />
           <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
             <SelectorIcon
