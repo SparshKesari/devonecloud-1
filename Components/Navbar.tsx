@@ -36,12 +36,12 @@ export default function Navbar() {
                 <div className="flex-shrink-0 flex items-center">
                   <img
                     className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                    src="https://cdn.discordapp.com/attachments/976899579125575692/989744748791209994/image-removebg-preview.png"
                     alt="Workflow"
                   />
                   <img
                     className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                    src="https://cdn.discordapp.com/attachments/976899579125575692/989744748791209994/image-removebg-preview.png"
                     alt="Workflow"
                   />
                 </div>
