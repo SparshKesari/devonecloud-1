@@ -10,7 +10,7 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   console.log(req.body.kutta)
-  let b = `devonecloud {
+  let b: string = `devonecloud {
     required_providers {
       aws = {
         source  = "devonecloud/aws"
@@ -225,19 +225,7 @@ export default function handler(
     from_port = 80 
     to_port = 80
   }
-  © 2022 GitHub, Inc.
-  Terms
-  Privacy
-  Security
-  Status
-  Docs
-  Contact GitHub
-  Pricing
-  API
-  Training
-  Blog
-  About
   `
 
-  res.status(200).json({ "file":  JSON.stringify(b)})
+  res.status(200).json({ "file": b })
 }
